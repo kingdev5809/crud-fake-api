@@ -1,0 +1,114 @@
+.card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  // width: 350px;
+  color: black;
+  padding: 1rem;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  .favorite {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 30px;
+    cursor: pointer;
+
+    svg {
+      color: red;
+    }
+  }
+  .post_title {
+    font-size: 1.3rem;
+    margin-right: 1.5em;
+    margin-bottom: 3rem;
+    &::selection {
+      background-color: transparent;
+    }
+  }
+  .post_body {
+    font-size: 1.2rem;
+    line-height: 130%;
+  }
+  .author {
+    margin: 1.5rem 0;
+    margin-bottom: 7.5rem;
+    h1 {
+      font-size: 1.3rem;
+      line-height: 130%;
+    }
+  }
+  .chekbox {
+    position: absolute;
+    bottom: 80px;
+    z-index: 9;
+    input{
+      cursor: pointer;
+      width: 15px;
+      height: 15px;
+    }
+  }
+  .edit-delete {
+    display: flex;
+    position: absolute;
+    bottom: 5rem;
+    left: 0;
+    right: 1rem;
+    justify-content: end;
+    gap: 1.2rem;
+    align-items: center;
+    p {
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      svg {
+        font-size: 1rem;
+      }
+    }
+    .edit {
+      color: blue;
+      &:hover {
+        color: rgb(7, 1, 82);
+      }
+    }
+    .delete {
+      color: red;
+      &:hover {
+        color: rgb(148, 2, 2);
+      }
+    }
+  }
+  .open-comments {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid black;
+    margin-top: 1rem;
+    padding: 1rem;
+    transition: 0.5s ease;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+@media screen and (max-width: 600px){
+  .card{
+    .chekbox {
+      bottom: 78px;
+    }
+  }
+}
+@media screen and (max-width: 400px){
+    .card{
+      .chekbox {
+        bottom: 50px;
+      }
+    }
+}

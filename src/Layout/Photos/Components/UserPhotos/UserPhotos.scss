@@ -1,0 +1,6 @@
+.userPhotos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  margin-top: 3rem;
+  gap: 30px;
+}
