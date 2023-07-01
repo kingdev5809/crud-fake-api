@@ -1,4 +1,4 @@
-.card {
+.post-card {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   // width: 350px;
   color: black;
@@ -41,7 +41,7 @@
     position: absolute;
     bottom: 80px;
     z-index: 9;
-    input{
+    input {
       cursor: pointer;
       width: 15px;
       height: 15px;
@@ -98,17 +98,17 @@
     }
   }
 }
-@media screen and (max-width: 600px){
-  .card{
+@media screen and (max-width: 600px) {
+  .card {
     .chekbox {
       bottom: 78px;
     }
   }
 }
-@media screen and (max-width: 400px){
-    .card{
-      .chekbox {
-        bottom: 50px;
-      }
+@media screen and (max-width: 400px) {
+  .card {
+    .chekbox {
+      bottom: 50px;
     }
+  }
 }

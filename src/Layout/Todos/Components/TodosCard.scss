@@ -1,0 +1,101 @@
+.todos {
+  height: 50vh;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > * {
+    transition: 0.4s ease;
+    + {
+      * {
+        border-top: 0.2em solid var(--clr-gb-6);
+      }
+    }
+  }
+  .card[draggable] {
+    cursor: move;
+  }
+  .card {
+    .item {
+      &.nonactive {
+        display: none;
+      }
+    }
+    .update {
+      flex: 1 1;
+      display: none;
+      justify-content: space-between;
+      gap: 20px;
+      &.active {
+        display: flex;
+      }
+      input {
+        color: var(--clr-white);
+        width: 100%;
+        border: 0.7px solid var(--clr-white);
+        border-radius: 3px;
+      }
+      button {
+        color: var(--clr-white);
+        border: 1px solid var(--clr-blue);
+        padding: 0.5em 1em;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .completed{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+    .btn {
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      svg {
+        font-size: 2em;
+      }
+    }
+    .favorite {
+      &.liked {
+        opacity: 1;
+      }
+    }
+    &:first-child {
+      border-radius: 0.5em 0.5em 0 0;
+    }
+    &:hover {
+      .btn {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+  .card.completed {
+    .item {
+      text-decoration: line-through;
+      color: var(--clr-gb-3);
+      text-decoration-color: var(--clr-gb-3);
+    }
+  }
+  .card.fall {
+    pointer-events: none;
+    animation: fall 0.2s forwards ease;
+  }
+  .card.dragging {
+    opacity: 0.5;
+  }
+  &.active {
+    .card.checked {
+      transition: 0.4s;
+      opacity: 0;
+      padding: 0;
+      border: 0;
+      height: 0;
+      pointer-events: none;
+    }
+  }
+}

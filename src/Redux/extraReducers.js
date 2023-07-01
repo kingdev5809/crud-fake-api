@@ -1,6 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { GetAllAlbums, GetAllPhotos, GetAllPosts, GetAllUsers } from "./Api";
+import {
+  GetAllAlbums,
+  GetAllPhotos,
+  GetAllPosts,
+  GetAllTodos,
+  GetAllUsers,
+} from "./Api";
 
 //Posts API
 export const getAllPosts = createAsyncThunk("get/allposts", async () => {
@@ -45,5 +51,12 @@ export const getPhotos = createAsyncThunk("get/photos", async (id) => {
   return axios({
     method: "GET",
     url: `${GetAllPhotos}?albumId=${id}`,
+  }).then((res) => res.data);
+});
+
+export const getAllTodos = createAsyncThunk("get/photos", async (id) => {
+  return axios({
+    method: "GET",
+    url: GetAllTodos,
   }).then((res) => res.data);
 });

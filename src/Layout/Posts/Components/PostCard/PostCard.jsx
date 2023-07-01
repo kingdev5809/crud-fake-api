@@ -60,7 +60,7 @@ function PostCard({ item, handleDelete, setUpdatedPostId, setUpdatedBody }) {
   }, [commentsVisible]);
   return (
     <>
-      <div className="card">
+      <div className="post-card">
         <div className="favorite" onClick={handleAddFavorite}>
           {favorite ? <MdFavorite /> : <MdFavoriteBorder />}
         </div>

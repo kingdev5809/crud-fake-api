@@ -51,6 +51,7 @@ function Navbar({ sticky }) {
             <NavLink
               className={({ isActive }) => (isActive ? "active" : "")}
               to={item.path}
+              key={item.id}
             >
               <MenuItem key={item.id}>{item.link}</MenuItem>
             </NavLink>
