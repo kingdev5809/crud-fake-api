@@ -170,22 +170,22 @@ function Todos({ stickyRef }) {
           <ul className="todos ">
             {todos.length == 0 ? <h1 className="item">Todos not found</h1> : ""}
             {todos?.slice(0, query).map((item) => (
-              <div key={item.id}>
+              <span key={item.id}>
                 {item.completed === false ? (
                   <TodosCard key={item.id} item={item} />
                 ) : (
                   ""
                 )}
-              </div>
+              </span>
             ))}
             {todos?.slice(0, query).map((item) => (
-              <div key={item.id}>
+              <span key={item.id}>
                 {item.completed === true ? (
                   <TodosCard key={item.id} item={item} />
                 ) : (
                   ""
                 )}
-              </div>
+              </span>
             ))}
           </ul>
           <div className="card stat">
